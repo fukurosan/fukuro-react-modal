@@ -1,0 +1,76 @@
+.fukuro-modal-window {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+  background: #fff;
+  border-radius: 2px;
+  height: 70%;
+  min-height: 400px;
+  min-width: 400px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation-name: modal-window-fade;
+  animation-duration: 0.2s;
+}
+
+.fukuro-modal-window-large {
+  height: 90%;
+}
+
+.fukuro-modal-window-content-responsive {
+  height: initial;
+  width: initial;
+  min-height: initial;
+  min-width: initial;
+}
+
+.fukuro-modal-window-content {
+  flex: auto;
+}
+
+.display-modal-window-hr {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fukuro-modal-window-backdrop {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 576px) {
+  .fukuro-modal-window-large {
+    min-width: 576px !important;
+    margin: 1.75rem auto !important;
+  }
+}
+@media (min-width: 768px) {
+  .fukuro-modal-window-large {
+    min-width: 768px !important;
+    margin: 1.75rem auto !important;
+  }
+}
+@media (min-width: 992px) {
+  .fukuro-modal-window-large {
+    min-width: 992px !important;
+    margin: 1.75rem auto !important;
+  }
+}
+
+@keyframes modal-window-fade {
+  from {
+    transform: translateX(-50%);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
