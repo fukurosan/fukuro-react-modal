@@ -1,6 +1,6 @@
 {
   "name": "fukuro-react-modal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fukuro React Modal",
   "main": "./lib/ModalFactory.js",
   "types": "./src/index.d.ts",
