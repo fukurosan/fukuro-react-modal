@@ -6,7 +6,7 @@ export default class LargeModal extends React.Component {
         return (
             <React.Fragment>
                 <div className="fukuro-modal-window-backdrop" onClick={this.props.onClose}></div>
-                <div className="fukuro-modal-window fukuro-modal-content-responsive">
+                <div className="fukuro-modal-window fukuro-modal-window-content-responsive">
                     {this.props.header !== undefined ?
                         <React.Fragment>
                             <div className="fukuro-modal-window-header">
