@@ -1,8 +1,8 @@
 {
   "name": "fukuro-react-modal",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "Fukuro React Modal",
-  "main": "./lib/ModalFactory.js",
+  "main": "./lib/Modal.js",
   "types": "./src/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
