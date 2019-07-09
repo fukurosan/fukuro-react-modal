@@ -1,4 +1,4 @@
-import ModalFactory from "./ModalFactory"
+import Modal from "./Modal"
 
 
-export = { ModalFactory }
+export = { Modal }

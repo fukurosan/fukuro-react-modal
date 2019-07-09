@@ -1,37 +1,44 @@
 .fukuro-modal-window {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 999999;
+  height: 90%;
+  width: 60%;
+
   margin: auto;
+
   background: #fff;
-  border-radius: 2px;
-  height: 70%;
-  min-height: 400px;
-  min-width: 400px;
-  position: relative;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   animation-name: modal-window-fade;
   animation-duration: 0.2s;
+  border-radius: 2px;
 }
 
-.fukuro-modal-window-large {
-  height: 90%;
+.fukuro-modal-drag {
+  cursor: move;
 }
 
-.fukuro-modal-window-content-responsive {
-  height: initial;
-  width: initial;
-  min-height: initial;
-  min-width: initial;
+.fukuro-modal-resizer {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #4286f4;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
 }
 
 .fukuro-modal-window-content {
   flex: auto;
-}
-
-.display-fukuro-modal-window-hr {
-  margin-left: 0;
-  margin-right: 0;
+  overflow: auto;
 }
 
 .fukuro-modal-window-backdrop {
@@ -40,26 +47,7 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-@media (min-width: 576px) {
-  .fukuro-modal-window-large {
-    min-width: 576px !important;
-    margin: 1.75rem auto !important;
-  }
-}
-@media (min-width: 768px) {
-  .fukuro-modal-window-large {
-    min-width: 768px !important;
-    margin: 1.75rem auto !important;
-  }
-}
-@media (min-width: 992px) {
-  .fukuro-modal-window-large {
-    min-width: 992px !important;
-    margin: 1.75rem auto !important;
-  }
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @keyframes modal-window-fade {
