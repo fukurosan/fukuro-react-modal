@@ -1,7 +1,9 @@
 # Fukuro React Modal
-You can either use this library as-is to create simple modal windows in React, or learn from the source code, and build your own modal factory for your project.
+This is a zero dependency modal library for React that includes resizing and moving functionality.
 
 This library uses ReactDOM portal to render the modal outside of the root div in a sibling element. This minimizes issues with z-indexes, overflows, etc.
+
+You can either use this library as-is to create simple yet powerful modal windows in React, or learn from the source code, and build your own modal factory for your project.
 
 ### Installing and using
 Install using NPM:
@@ -11,23 +13,19 @@ npm install fukuro-react-modal
 
 Then you can do the following to use it:
 ```
-import ModalFactory from 'fukuro-react-modal'
+import FukuroModal from 'fukuro-react-modal'
 (...)
-const header = "Header Content" //optional if you want a quick and dirty modal
-const footer = "Footer Content" //optional if you want a quick and dirty modal
-const modalType = "LARGE" //optional type specifier, leave blank for content responsive
+const header = "Header Content" //optional
+const movable={true} //requires header to be set
+const footer = "Footer Content" //optional
+const sizable={true} //requires footer to be set
 
 {YourCriteriaForShowingTheModal ?
-  <ModalFactory header={header} footer={footer} onClose={this.toggleYourCriteraForShowingTheModalFunction}>
-    Your content goes here!
-  </ModalFactory>
+  <FukuroModal header={header} footer={footer} movable={movable} sizable={sizable} onClose={() => { this.toggleYourCriteraForShowingTheModalFunction() }}>
+    Your body content goes here!
+  </FukuroModal>
 : null}
 }
 ```
-
-The modal currently supports a few different types of modals:
-- RESPONSIVE (Default)
-- LARGE
-- TALL
 
 Use the onClose prop to send a reference to a handler that changes the state between opened and closed in your parent component. This will fire when the backdrop is clicked.
