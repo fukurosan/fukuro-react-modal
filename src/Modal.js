@@ -15,6 +15,7 @@ export default class ModalFactory extends React.Component {
         modalElement.style.position = "absolute"
         modalElement.style.display = "flex"
         modalElement.style.flexDirection = "column"
+        modalElement.style.zIndex = 9999
 
         this.state = {
             modalElement: modalElement,
@@ -40,15 +41,16 @@ export default class ModalFactory extends React.Component {
         document.body.removeChild(this.state.modalElement)
     }
 
-
     fixateModal() {
         let modal = document.getElementById("fukuro-modal-window-" + this.state.modalIdentifier)
-        modal.style.top = ((modal.offsetTop / window.innerHeight) * 100) + "%"
-        modal.style.left = ((modal.offsetLeft / document.body.clientWidth) * 100) + "%"
+        const modalHeight = Math.ceil(parseFloat(getComputedStyle(modal, null).getPropertyValue('height').replace('px', '')))
+        const modalWidth = Math.ceil(parseFloat(getComputedStyle(modal, null).getPropertyValue('width').replace('px', '')))
+        modal.style.top = ((((window.innerHeight - modalHeight) / 2) / window.innerHeight) * 100) + "%"
+        modal.style.left = ((((document.body.clientWidth - modalWidth) / 2) / document.body.clientWidth) * 100) + "%"
         modal.style.right = "initial"
         modal.style.bottom = "initial"
-        modal.style.height = modal.offsetHeight + "px"
-        modal.style.width = modal.offsetWidth + "px"
+        modal.style.height = modalHeight + "px"
+        modal.style.width = modalWidth + "px"
     }
 
     makeModalResizable() {
