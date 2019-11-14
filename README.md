@@ -3,8 +3,6 @@ This is a zero dependency modal library for React that includes resizing and mov
 
 This library uses ReactDOM portal to render the modal outside of the root div in a sibling element. This minimizes issues with z-indexes, overflows, etc.
 
-You can either use this library as-is to create simple yet powerful modal windows in React, or learn from the source code, and build your own modal factory for your project.
-
 ### Installing and using
 Install using NPM:
 ```
